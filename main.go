@@ -3,8 +3,6 @@ package main
 import (
 	"database/sql"
 	"fmt"
-	"github.com/victorbrugnolo/golang-di/product"
-
 	_ "github.com/mattn/go-sqlite3"
 )
 
@@ -14,7 +12,7 @@ func main() {
 		panic(err)
 	}
 
-	usecase := product.NewProductRepository(db)
+	usecase := NewProductUseCase(db)
 
 	prod, err := usecase.GetProduct(1)
 	if err != nil {
