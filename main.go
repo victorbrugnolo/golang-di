@@ -14,8 +14,7 @@ func main() {
 		panic(err)
 	}
 
-	repository := product.NewProductRepository(db)
-	usecase := product.NewProductUseCase(repository)
+	usecase := product.NewProductRepository(db)
 
 	prod, err := usecase.GetProduct(1)
 	if err != nil {
